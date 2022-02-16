@@ -1,0 +1,23 @@
+@use '../../variables.scss' as var;
+
+@media(min-width: var.$mq_sidebar) {
+	body {
+		display: grid;
+		grid-template-columns: minmax(auto, 250px) 1fr;
+		grid-template-rows: 1fr auto;
+		grid-template-areas: 'sidebar main' 'footer main';
+		max-height: 100vh;
+	}
+
+	main {
+		grid-area: main;
+		max-height: 100vh;
+		overflow-y: auto;
+	}
+}
+
+@media(min-width: 60em) {
+	body {
+		grid-template-columns: 300px 1fr;
+	}
+}

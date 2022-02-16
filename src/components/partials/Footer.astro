@@ -1,0 +1,25 @@
+<style lang="scss">
+	@use '../../../src/styles/_variables.scss' as var;
+
+	footer {
+		background: var.$dark_navy;
+		text-align: center;
+		padding: 20px;
+		font-size: 0.8em;
+		color: var.$red;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	@media(min-width: var.$mq_sidebar) {
+		footer {
+			text-align: left;
+		}
+	}
+</style>
+
+<footer>
+	<p>No Quokkas were harmed in the making of this workshop, we promise.</p>
+</footer>

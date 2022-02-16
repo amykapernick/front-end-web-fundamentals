@@ -1,0 +1,17 @@
+---
+import Layout from '../components/partials/Layout.astro'
+
+const { content = {} } = Astro.props
+const { title = 'Front End Web Fundamentals' } = content
+---
+
+<style lang="scss">
+	@import '../styles/layouts/default.scss';
+</style>
+
+<Layout content={content}>
+	<article class="content">
+		<h1 class="title">{title}</h1>
+		<slot />
+	</article>
+</Layout>

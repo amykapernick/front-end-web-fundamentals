@@ -2,17 +2,19 @@
   "name": "front-end-web-fundamentals",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amykapernick/front-end-web-fundamentals.git"
   },
-  "keywords": [],
   "author": "Amy Kapernick <amy@kapers.dev> (https://amyskapers.dev/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/amykapernick/front-end-web-fundamentals/issues"
-  },
-  "homepage": "https://github.com/amykapernick/front-end-web-fundamentals#readme"
+  "dependencies": {
+    "astro": "^0.21.13",
+    "astro-icon": "^0.5.3"
+  }
 }

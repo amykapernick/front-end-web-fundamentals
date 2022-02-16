@@ -1,0 +1,129 @@
+---
+import { Icon } from 'astro-icon'
+---
+
+<style lang="scss">
+	@import '../../../src/styles/components/partials/header.scss';
+</style>
+
+<script>
+	const toggleMenu = () => {
+		const sidebar = document.querySelector('#sidebar').dataset
+		
+		if(sidebar.open == "false") {
+			sidebar.open = "true"
+		} else {
+			sidebar.open = "false"
+		}
+	}
+</script>
+
+<header>
+	<p class="title">Front End Web Fundamentals</p>
+	<nav id="sidebar" data-open="true">
+		<button class="hamburger" onClick="toggleMenu()">
+			<Icon name="hamburger" />
+			<span class="sr-only">Toggle Sidebar</span>
+		</button>
+		<ul class="menu">
+			<li>
+				<span>Semantic HTML</span>
+				<ul>
+					<li>
+						<a href="/">
+							<Icon name="kiwi" />
+							Quokkas
+						</a>
+					</li>
+					<li>
+						<a href="/html/resources">
+							<Icon name="reference-book" />
+							Resources
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<span>CSS Layouts</span>
+				<ul>
+					<li>
+						<a href="/grid">
+							<Icon name="board-2" />
+							CSS Grid
+						</a>
+					</li>
+					<li>
+						<a href="/css">
+							<Icon name="flexibility" />
+							Flexbox
+						</a>
+					</li>
+					<li>
+						<a href="/css">
+							<Icon name="float" />
+							Floats
+						</a>
+					</li>
+					<li>
+						<a href="/css/resources">
+							<Icon name="reference-book" />
+							Resources
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<span>Accessibility Testing</span>
+				<ul>
+					<li>
+						<a href="/a11y/resources">
+							<Icon name="adaptive-bike" />
+							Accessibility Testing
+						</a>
+					</li>
+					<li>
+						<a href="/a11y/resources">
+							<Icon name="reference-book" />
+							Resources
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<span>Visual Regression Testing</span>
+				<ul>
+					<li>
+						<a href="/a11y/resources">
+							<Icon name="difference" />
+							Visual Regression Testing
+						</a> 
+					</li>
+					<li> 
+						<a href="/vr/resources">
+							<Icon name="reference-book" />
+							Resources
+						</a>
+					</li>
+				</ul> 
+			</li>  
+			<li> 
+				<span>UI Testing</span>
+				<ul> 
+					<li> 
+						<a href="/a11y/resources">
+							<Icon name="device" />
+							UI Testing
+						</a>
+					</li>
+					<li>
+						<a href="/ui/resources">
+							<Icon name="reference-book" />
+							Resources
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</header>
+
