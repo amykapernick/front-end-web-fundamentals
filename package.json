@@ -1,0 +1,20 @@
+{
+  "name": "front-end-web-fundamentals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amykapernick/front-end-web-fundamentals.git"
+  },
+  "keywords": [],
+  "author": "Amy Kapernick <amy@kapers.dev> (https://amyskapers.dev/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amykapernick/front-end-web-fundamentals/issues"
+  },
+  "homepage": "https://github.com/amykapernick/front-end-web-fundamentals#readme"
+}
