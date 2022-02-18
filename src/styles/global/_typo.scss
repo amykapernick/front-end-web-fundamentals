@@ -3,7 +3,7 @@ body {
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.5;
-	background: var.$neutral_light_90;
+	background: var.$dark_background;
 	color: var.$background;
 }
 
@@ -56,10 +56,6 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
-img {
-	max-width: 600px;
-	max-height: 600px;
-}
 
 nav {
 	ul {

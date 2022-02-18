@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/DefaultLayout.astro';
+
+const content = {
+	title: 'Quokkas'
+}
+---
+
+<Layout content={content}>
+	<div>
+		<h2 id="what">What are Quokkas</h2>
+		<p>Quokkas are the happiest animal in Australia that surprisngly isn't trying to kill you. They're Australian marsupials (related to kangaroos and wallabies), only found on a small island called Rottnest Island, off the coast of Perth. They're herbivores (although will eat most food you leave lying around) and have no natural predators therefore aren't afraid of humans.</p>
+		<img src="/img/rottnest.jpg" />
+		<p>But what Quokkas are most known for, is the fact that they look like they're smiling and their penchant for selfies. Quokkas have a happy, genial expression which is actually due to evolution. Like canines, Quokkas' mouths open slightly to pant allowing them to cool themselves. When they're happy and hot (which is quite often, Perth is a bit warmer than Norway 😂), they seem like they are smiling.</p>
+		<img src="/img/quokka_2.jpg" />
+		<p>Although tourists and visitors to the island love Quokkas, the locals don't appreciate them as much. Due to their lack of fear for humans, Quokkas will regularly enter buildings such as homes or restaurants.</p>
+		<img src="/img/quokka_3.jpg" />
+		<img src="/img/quokka_1.jpg" />
+
+		<h3>Quokka Stats</h3>
+		<div>
+			<h4>Size</h4>
+			<p>40 to 54 cm</p>
+			<h4>Weight</h4>
+			<p>2.5 to 5kg</p>
+			<h4>Lifespan</h4>
+			<p>About 10 years in the wild and up to 15 years in captivity.</p>
+		</div>
+		<h4>Quokkas Compared</h4>
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Animal</th>
+					<th scope="col">Size</th>
+					<th scope="col">Weight</th>
+					<th scope="col">Diet</th>
+					<th scope="col">Habitat</th>
+					<th scope="col">Conservation Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">Quokka</th>
+					<td>40-54cm</td>
+					<td>2.5-5kg</td>
+					<td>Herbivore</td>
+					<td>South-west Western Australia</td>
+					<td>Vulnerable</td>
+				</tr>
+				<tr>
+					<th scope="row">Kangaroo</th>
+					<td>2m</td>
+					<td>90kg</td>
+					<td>Herbivore</td>
+					<td>All over</td>
+					<td>Least Concern</td>
+				</tr>
+				<tr>
+					<th scope="row">Platypus</th>
+					<td>43-50cm</td>
+					<td>0.7-2.4kg</td>
+					<td>Carnivore</td>
+					<td>East and South-Eastern Australia</td>
+					<td>Near Threatened</td>
+				</tr>
+				<tr>
+					<th scope="row">Koala</th>
+					<td>60-85cm</td>
+					<td>4-15kg</td>
+					<td>Eucalyptus Leaves</td>
+					<td>Eastern and Souther Australia</td>
+					<td>Vulnerable</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<h2 id="why">Why am I reading about Quokkas?</h2>
+		<p>Because writing stock content for these things is boring, and Quokkas are cool.</p>
+		<p>Also Quokkas are amazing and if you don't agree you can go off and find boring <i>Lorem Ipsum</i> content.</p>
+		<img src="/img/quokka_5.jpg" />
+	</div>
+	<div>
+		<h2 id="faq">Frequently Asked Quokkas</h2>
+		<div>
+			<h3>Are Quokkas real?</h3>
+			<p>Is Australia real? Are we even real? What is real? Are we all just a figment of someone's imagination? Or part of the matrix?</p>
+			<p>Yes, Quokkas are real. They seem too good to be true, and a bit too weird (like most animals in Australia, I'm still convinced that platypus' are a myth), but they do genuinely exist.</p>
+		</div>
+		<div>
+			<h3>Can I have one?</h3>
+			<p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
+		</div>
+		<div>
+			<h3>What threatens Quokkas?</h3>
+			<p>Although mainland Quokkas are threatened by the European red fox, domesticated cats and dogs as well as wild birds of prey and dingoes, Rottnest Island (where most Quokkas live), is free of most of these predators.</p>
+		</div>
+		<div>
+			<h3>What happens if I try and steal a Quokka?</h3>
+			<p>Rottnest Island Authority can issue a $100 fine for picking up a Quokka, and you can be taken to court and subject to a fine of up to $1000.</p>
+		</div>
+		<div>
+			<h3>What does a Quokka do when threatened?</h3>
+			<p>If a Quokka mother is threatened by a predator, she will often throw her baby on the ground to distract the predator and save her own life.</p>
+			<img src="/img/quokka_6.jpg" />
+		</div>
+		<div>
+			<h3>How do I pronounce "Quokka"?</h3>
+			<p>Quokka is pronounced <em>kwaa-ka</em></p>
+			<p>The name Quokka comes from the Aboriginal people that lived in Western Australia where they were first discovered.</p>
+		</div>
+	</div>
+	<div>
+		<h2 id="contact">Where can I find out more about Quokkas?</h2>
+		<form>
+			<label>Name</label>
+			<input name="name" />
+			<label>Email</label>
+			<input type="email" name="email" />
+			<label>When do you want to see Quokkas?</label>
+			<input name="date" />
+			<label>What time?</label>
+			<input name="time" />
+			<label>Country</label>
+			<input name="countries" />
+			<button>Tell me more about Quokkas 🐨</button>
+		</form>
+	</div>
+	<div>
+		No Quokkas were harmed in the making of this page, we promise!
+	</div>
+</Layout>

@@ -7,6 +7,17 @@ const { title = 'Front End Web Fundamentals' } = content
 
 <style lang="scss">
 	@import '../styles/layouts/default.scss';
+
+	.content {
+		padding: 20px;
+
+		:global(img) {
+			max-width: 100%;
+			max-height: 300px;
+			margin: 20px auto;
+			display: block;
+		}
+	}
 </style>
 
 <Layout content={content}>

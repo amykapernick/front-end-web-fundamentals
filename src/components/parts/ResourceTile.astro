@@ -1,0 +1,61 @@
+---
+import research from '../../img/research.png';
+
+const { content = {} } = Astro.props
+const {title, img, url} = content
+const imgUrl = img?.image?.file?.url || img?.image?.external?.url || research
+---
+
+<style lang="scss">
+	@use '../../styles/_variables.scss' as var;
+
+	img.feature {
+		max-width: unset;
+		width: calc(100% + 40px);
+		margin: -20px 0 20px -20px;
+		display: block;
+		border-radius: 10px 10px 0 0;
+		height: 120px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	h2 {
+		font-size: 0.9em;
+		font-weight: 500;
+		text-transform: none;
+		color: inherit;
+	}
+
+	article {
+		padding: 20px;
+		background: var.$dark_navy;
+		border-radius: 10px;
+		box-shadow: 2px 2px 1px 1px rgba(var.$navy, 0.15);
+		position: relative;
+		color: var.$background;
+
+		&:hover {
+			background: var.$background;
+			color: var.$navy;
+		}
+	}
+
+	a {
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+</style>
+
+<article>
+	<img class="feature" src={imgUrl} />
+	<h2>
+		<a target="_blank" href={url}>{title}</a>
+	</h2>
+</article>

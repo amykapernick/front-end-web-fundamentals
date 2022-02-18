@@ -1,0 +1,100 @@
+---
+import { Icon } from 'astro-icon'
+
+const { buttonText = 'Open Modal', buttonIcon } = Astro.props
+---
+
+<button onClick="toggleModal()">
+	{buttonIcon && <Icon name={buttonIcon} />}
+	{buttonText}
+</button>
+<div class="modal" id="modal" data-open="false">
+	<button onClick="toggleModal()">
+		<Icon name="close" />
+		<span class="sr-only">Close Modal</span>
+	</button>
+	<slot />
+</div>
+
+<style lang="scss">
+	@use '../../styles/_variables.scss' as var;
+
+	.modal {
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		padding: 40px;
+		
+		color: var.$background;
+		z-index: 100;
+
+		&[data-open="true"] {
+			display: block;
+		}
+
+		&:before {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+			height: 100vh;
+			width: 100vw;
+			z-index: -1;
+			content: '';
+			background: var.$dark_background;
+			opacity: 0.9;
+		}
+
+		&:after {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: -1;
+			content: '';
+			background: var.$navy;
+			border-radius: 10px;
+		}
+
+		button {
+			background: none;
+			color: var.$background;
+			border-color: transparent;
+			border-width: 2px;
+			height: 40px;
+			width: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			padding: 8px;
+			margin: 0;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+
+			svg {
+				display: block;
+			}
+
+			&:hover {
+				border-color: var.$background;
+			}
+		}
+	}
+</style>
+
+<script>
+	const toggleModal = () => {
+		const modal = document.querySelector('#modal').dataset
+		
+		if(modal.open == "false") {
+			modal.open = "true"
+		} else {
+			modal.open = "false"
+		}
+	}
+</script>

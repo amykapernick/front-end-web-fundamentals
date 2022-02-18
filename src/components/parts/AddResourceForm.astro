@@ -1,0 +1,13 @@
+---
+const pageUrl = Astro.request.url.href
+const { section } = Astro.props
+---
+
+<form method="post" action={`https://api.amyskapers.dev/workshop?section=${section}`}>
+	<input type="hidden" name="redirect" value={pageUrl} />
+	<label for="url">Resource Title</label>
+	<input id="title" type="text" name="title" />
+	<label for="url">Resource URL</label>
+	<input id="url" type="text" name="url" />
+	<button type="submit">Submit</button>
+</form>

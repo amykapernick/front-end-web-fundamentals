@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/DefaultLayout.astro';
+import ResourceTile from '../../components/parts/ResourceTile.astro'
+import Modal from '../../components/parts/Modal.astro'
+import ResourceForm from '../../components/parts/AddResourceForm.astro'
+
+const response = await fetch('https://api.amyskapers.dev/workshop?section=html')
+const { data = [] } = await response.json()
+
+const content = {
+	title: 'Semantic HTML Resources'
+}
+
+---
+
+<Layout content={content}>
+	<ul>
+		{data.map(resource => (
+			<li>
+				<ResourceTile 
+					content={{
+						title: resource.properties.Name.title[0].text.content,
+						img: resource.blocks.results[0],
+						url: resource.properties.URL.url
+					}} 
+				/>
+			</li>
+		))}
+	</ul>
+	<Modal
+		buttonText="Suggest Resource"
+	>
+		<ResourceForm section="html" />
+	</Modal>
+</Layout>
+
+<style lang="scss">
+	@use '../../styles/_variables.scss' as var;
+
+	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 20px;
+		list-style: none;
+		margin: 0;
+	}
+
+	li {
+		margin: 0;
+		padding: 0;
+	}
+
+	button {
+		margin-left: auto;
+	}
+</style>
+

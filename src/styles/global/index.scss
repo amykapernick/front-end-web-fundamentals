@@ -1,4 +1,5 @@
 @use '../_variables.scss' as var; 
+@use '../mixins.scss';
 
 *, *:before, *:after {
 	box-sizing: border-box;
@@ -31,3 +32,4 @@ body {
 
 
 @import './typo.scss';
+@import './forms.scss';
