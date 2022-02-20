@@ -19,7 +19,7 @@ import { Icon } from 'astro-icon'
 </script>
 
 <header>
-	<p class="title">Front End Web Fundamentals</p>
+	<a class="title" href="/">Front End Web Fundamentals</a>
 	<nav id="sidebar" data-open="false">
 		<button class="hamburger" onClick="toggleMenu()">
 			<Icon name="hamburger" />
@@ -36,6 +36,12 @@ import { Icon } from 'astro-icon'
 						</a>
 					</li>
 					<li>
+						<a href="/semantic-html/examples">
+							<Icon name="code" />
+							Examples
+						</a>
+					</li>
+					<li>
 						<a href="/semantic-html/resources">
 							<Icon name="reference-book" />
 							Resources
@@ -47,19 +53,19 @@ import { Icon } from 'astro-icon'
 				<span>Modern CSS</span>
 				<ul>
 					<li>
-						<a href="/grid">
+						<a href="/css/grid">
 							<Icon name="board-2" />
 							CSS Grid
 						</a>
 					</li>
 					<li>
-						<a href="/css">
+						<a href="/css/flexbox">
 							<Icon name="flexibility" />
 							Flexbox
 						</a>
 					</li>
 					<li>
-						<a href="/css">
+						<a href="/css/floats">
 							<Icon name="float" />
 							Floats
 						</a>
@@ -76,7 +82,7 @@ import { Icon } from 'astro-icon'
 				<span>Accessibility</span>
 				<ul>
 					<li>
-						<a href="/a11y/resources">
+						<a href="/a11y">
 							<Icon name="adaptive-bike" />
 							Accessibility Testing
 						</a>
@@ -93,7 +99,7 @@ import { Icon } from 'astro-icon'
 				<span>Visual Regression Testing</span>
 				<ul>
 					<li>
-						<a href="/a11y/resources">
+						<a href="/vr">
 							<Icon name="difference" />
 							Visual Regression Testing
 						</a> 
@@ -110,7 +116,7 @@ import { Icon } from 'astro-icon'
 				<span>UI Testing</span>
 				<ul>  
 					<li> 
-						<a href="/a11y/resources">
+						<a href="/ui">
 							<Icon name="device" />
 							UI Testing
 						</a>

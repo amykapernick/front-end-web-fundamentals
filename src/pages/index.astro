@@ -1,11 +1,59 @@
 ---
 import Layout from '../layouts/DefaultLayout.astro';
+import ResourceTile from '../components/parts/ResourceTile.astro';
+import sections from '../../_data/sections.js'
 
 const content = {
-	title: 'Quokkas'
+	title: 'Front End Web Fundamentals'
 }
 ---
 
 <Layout content={content}>
-	<p>Front End Web Fundamentals</p>
+	<p class="repo">GitHub Repo: <a href="https://kapers.dev/workshop" target="_blank">kapers.dev/workshop</a></p>
+	<ul>
+		{sections.map(section => (
+			<li>
+				<h2>{section.block}</h2>
+				<ul class="blocks">
+					{section.blocks.map(block => (
+						<li>
+							<ResourceTile
+								content={block}
+							/>
+						</li>
+					))}
+				</ul>
+			</li>
+		))}
+	</ul>
 </Layout>
+
+<style lang="scss">
+	@use '../styles/_variables.scss' as var;
+
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+
+	.repo {
+		color: var.$darkpurple;
+		font-size: 1.5em;
+		text-align: center;
+	}
+
+	.blocks {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 20px;
+	}
+
+	li {
+		margin: 0;
+		padding: 0;
+	}
+
+	button {
+		margin-left: auto;
+	}
+</style>
