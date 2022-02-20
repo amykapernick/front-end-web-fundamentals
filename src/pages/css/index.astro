@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/DefaultLayout.astro';
+import ResourceTile from '../../components/parts/ResourceTile.astro';
+import sections from '../../../_data/css.js'
+
+const content = {
+	title: 'Modern CSS'
+}
+---
+
+<Layout content={content}>
+	<ul>
+		{sections.map(block => (
+			<li>
+				<ResourceTile
+					content={block}
+				/>
+			</li>
+		))}
+	</ul>
+</Layout>
+
+<style lang="scss">
+	ul {
+		list-style: none;
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 20px;
+	}
+
+	li {
+		margin: 0;
+		padding: 0;
+	}
+</style>

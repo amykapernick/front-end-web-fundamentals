@@ -57,10 +57,15 @@ We can use the [`grid-gap` property](https://developer.mozilla.org/en-US/docs/We
 
 ```css
 body {
+	/* Define both values is separate properties */
 	grid-column-gap: 20px;
-	grid-row-gap: 25px; */
-	grid-gap: 20px 25px;grid-gapgrid-gapgrid-gap
-	grid-gap: 20px;grid-gapgrid-gap
+	grid-row-gap: 25px;
+
+	/* Using the shorthand to define both properties with different values */
+	grid-gap: 20px 25px;
+
+	/* Using the shorthand to define both properties with the same value */
+	grid-gap: 20px;
 }
 ```
 
@@ -68,10 +73,96 @@ These properties have recently been updated to remove the `grid-` prefix, so you
 
 ![https://caniuse.com/?search=gap](/img/gap-can-i-use.jpg)
 
+## Grid Lines
+
+When putting items on the grid, we talk in terms of lines on the grid, these are used the split up the layout and we can use the numbers to define different areas or sizes of grid children.
+
+![](/img/grid-lines-1.png)
+
+Not only are the lines numbered forwards, but they're numbered backwards as well, so it's easier to define the position relative to the opposite side of the grid.
+
+![](/img/grid-lines-2.png)
+
 ## Placing Items in the Grid
 
-Once the grid columns and rows are set up, we can place the grid children on the grid, in certain spots or spanning multiple rows.
+Once the grid columns and rows are set up, we can place the grid children on the grid, in certain spots or spanning multiple rows. To do this we can use the following properties:
+
+- [`grid-column-start`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start)
+- [`grid-column-end`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end)
+- [`grid-row-start`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start)
+- [`grid-row-end`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end)
+
+When defining placement, you can define a point to start the element and a point to end the element or define one of these points and the number of rows/columns to span.
+
+```css
+header {
+	grid-column-start: 2;
+	grid-column-end: 4;
+}
+
+footer {
+	grid-column-start: 1;
+	grid-column-end: span 4;
+}
+
+main {
+	grid-column-start: span 3;
+	grid-column-end: 4;
+}
+```
+
+### Shorthand Properties
+You can also use the shorthand properties to define both the `-start` and `-end` values at the same time.
+
+- [`grid-row`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
+- [`grid-column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column)
 
 ## Grid Areas
 
-We can define various areas of our grid and 
+We can define various areas of our grid and where grid children go, rather than using line numbers to define their positions. We can do this by first defining [`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) on the grid item.
+
+```css
+body {
+	grid-template-columns: 200px repeat(4, 1fr);
+	grid-template-rows: 100px 1fr 20px;
+	grid-template-areas:
+     'header    header   header   header   header'
+     'sidebar   content  content  content  content'
+     'footer    footer   footer   footer   footer';
+}
+```
+
+These area names line up with the columns and rows on the grid.
+
+![](/img/grid_areas_1.png)
+
+When using the same name for multiple sections, it then combines the cells to create one large area on the grid.
+
+![](/img/grid_areas_2.png)
+
+We can then use those named areas to assign grid children to their positions on the grid.
+
+```css
+header {
+	grid-area: header
+}
+
+footer {
+	grid-area: footer;
+}
+
+main {
+	grid-area: content;
+}
+```
+
+If we want to keep a section clear, we can also use `.` to denote a blank grid cell.
+
+```css
+body {
+	grid-template-areas:
+     'header    header   header   header   .'
+     'sidebar   content  content  content  .'
+     'footer    footer   footer   footer   footer';
+}
+```
