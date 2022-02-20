@@ -1,8 +1,9 @@
 ---
-import Layout from '../../layouts/DefaultLayout.astro';
+import Layout from '../../layouts/CSSLayout.astro';
 import ResourceTile from '../../components/parts/ResourceTile.astro'
 import Modal from '../../components/parts/Modal.astro'
 import ResourceForm from '../../components/parts/AddResourceForm.astro'
+import '../../styles/css/resources.css'
 
 const response = await fetch('https://api.amyskapers.dev/workshop?section=css')
 const { data = [] } = await response.json()
@@ -14,9 +15,9 @@ const content = {
 ---
 
 <Layout content={content}>
-	<ul>
+	<ul class="resources">
 		{data.map(resource => (
-			<li>
+			<li class="block">
 				<ResourceTile 
 					content={{
 						title: resource.properties.Name.title[0].text.content,
@@ -37,15 +38,12 @@ const content = {
 <style lang="scss">
 	@use '../../styles/_variables.scss' as var;
 
-	ul {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		grid-gap: 20px;
+	.resources {
 		list-style: none;
 		margin: 0;
 	}
 
-	li {
+	.block {
 		margin: 0;
 		padding: 0;
 	}
