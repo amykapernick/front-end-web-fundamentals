@@ -64,3 +64,104 @@ nav {
 		padding: 0;
 	}
 }
+
+figure {
+	max-width: 600px;
+	margin: 20px auto;
+	border: 4px solid currentColor;
+	border-radius: 2px;
+	padding: 40px 40px;
+	background: var.$background;
+	color: var.$red;
+
+	&:nth-of-type(7n) {
+		color: var.$purple;
+		background: #F1EFF9;
+	}
+	
+	&:nth-of-type(7n-1) {
+		color: var.$yellow;
+		background: #FFFAE6;
+	}
+	
+	&:nth-of-type(7n-2) {
+		color: var.$darkpurple;
+		background: #FAEEF5;
+	}
+	
+	&:nth-of-type(7n-3) {
+		color: var.$green;
+		background: #F0F7F0;
+	}
+	
+	&:nth-of-type(7n-4) {
+		color: var.$navy;
+		background: #F4ECF6;
+	}
+	
+	&:nth-of-type(7n-5) {
+		color: var.$blue;
+		background: #EAF4FD;
+	}
+
+	img {
+		border: 2px solid currentColor;
+		width: 100%;
+		display: block;
+	}
+}
+
+figcaption {
+	padding: 10px 40px 50px;
+	margin: 0 -20px;
+	text-align: center;
+	font-family: var.$font_code;
+	font-size: 1.1em;
+}
+
+table, td, th {
+	border: 1px solid #192B1A;
+	border-collapse: collapse;
+}
+
+td, th {
+	padding: 10px 5px;
+	color: var.$background;
+}
+
+th {
+	text-align: left;
+	padding: 10px;
+}
+
+thead {
+	th {
+		font-size: 1.1em;
+		text-align: center;
+		background: var.$green;
+		color: #D8EBD9;
+	}
+}
+
+tr {
+	&:nth-child(2n) {
+		background: var.$navy;
+	}
+}
+
+details {
+	padding: 10px 30px;
+
+	&[open] {
+		background: var.$navy;
+	}
+}
+
+
+
+summary {
+	font-size: 1.2em;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 0 -20px;
+}

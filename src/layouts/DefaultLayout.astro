@@ -14,7 +14,7 @@ const { title = 'Front End Web Fundamentals' } = content
 
 		:global(img) {
 			max-width: 100%;
-			max-height: 300px;
+			max-height: 50vh;
 			margin: 20px auto;
 			display: block;
 		}
@@ -22,8 +22,10 @@ const { title = 'Front End Web Fundamentals' } = content
 </style>
 
 <Layout content={content}>
-	<article class="content">
-		<h1 class="title">{title}</h1>
-		<slot />
-	</article>
+	<main>
+		<article class="content">
+			<h1 class="title">{title}</h1>
+			<slot />
+		</article>
+	</main>
 </Layout>

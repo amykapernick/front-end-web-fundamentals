@@ -7,8 +7,9 @@
 		grid-template-rows: 1fr auto;
 		grid-template-areas: 'sidebar main' 'footer main';
 		max-height: 100vh;
+		overflow-y: auto;
 	}
-
+	
 	main {
 		grid-area: main;
 		max-height: 100vh;

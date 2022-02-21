@@ -18,9 +18,14 @@ const { title = 'Front End Web Fundamentals', description = '' } = content
 	</head>
 	<body>
 		<Header />
-		<main>
-			<slot />
-		</main>
+		<slot />
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main {
+		max-height: 100vh;
+		overflow-y: auto;
+	}
+</style>

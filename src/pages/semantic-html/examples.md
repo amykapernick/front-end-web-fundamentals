@@ -195,3 +195,46 @@ The [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/detail
 	<p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
 </details>
 ```
+
+## Text Alternatives
+
+We can use the [`alt`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-alt) attribute to define a text alternative in case someone is unable to see the image. This could either be as a result of the user using a screen reader or assistive technology, or could be due to the image failing to load.
+
+```html
+<img src="/img/rottnest.jpg" alt="Rottnest Island in Western Australia, with white sandy beach and the clear blue water dotted with small rocky reef sections along the edge" />
+```
+
+## Addresses
+
+You can use the [`address` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address) to provide a more semantic wrapper around address details. This isn't limited to physical location addresses, but can also be used for email addresses and phone numbers as well.
+
+```html
+<address>
+	1 Henderson Ave<br/> 
+	Rottnest Island, WA<br/>
+	Australia 6161
+</address>
+
+<address>
+	<a href="tel:+61893729730">(08) 9372 9730</a>
+</address>
+```
+
+## Datalists
+
+There's a special type of form input called a [`datalist`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist), which allows users to type in a text field and have the options be autofilled from a list of predefined options.
+
+```html
+<label>Which Australian animal do you think is the best?</label>
+<input type="text" list="animals" id="aussie-animals" name="best-animal" />
+
+<datalist id="animals">
+	<option value="Quokka" >
+	<option value="Koala" >
+	<option value="Platypus" >
+	<option value="Echidna" >
+	<option value="Kangaroo" >
+	<option value="Camel" >
+		
+</datalist>
+```
