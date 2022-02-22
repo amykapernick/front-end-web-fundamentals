@@ -14,5 +14,9 @@ export default ({
 				]
 			}
 		]
+	},
+	buildOptions: {
+		sitemap: true,
+		site: 'http://localhost:3000'
 	}
 });

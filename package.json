@@ -5,7 +5,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "test:pa11y": "node tests/pa11y",
+    "test:percy": "percy snapshot tests/percy/snapshots.yml"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,7 @@
   "dependencies": {
     "astro": "^0.21.13",
     "astro-icon": "^0.5.3",
+    "pa11y": "^6.1.1",
     "rehype-external-links": "^1.0.1"
   }
 }
