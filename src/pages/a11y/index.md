@@ -124,6 +124,8 @@ One of the best things we can do is provide good, logical HTML that screen reade
 
 To properly test with screen readers, we need to hire someone who uses one on a daily basis. However it never hurts to give this a go ourselves.
 
+You can also use services like [Assistiv Labs](https://assistivlabs.com/) to run screen reader tests and tests using other assistive technologies through the browser.
+
 #### MacOS
 
 You can enable [VoiceOver](https://support.apple.com/en-au/guide/voiceover/vo2682/mac) in the accessibility settings.
@@ -136,8 +138,21 @@ You can enable [Narrator](https://support.microsoft.com/en-us/windows/complete-g
 
 ![](/img/narrator.png)
 
-### Linting
+#### Keyboards
+
+The easiest way to test is also to get your keyboard out and try and navigate through without your mouse. Can you reach everywhere you need to? Can you fill in and submit forms, click buttons and trigger actions, can you navigate between pages?
+
+### Linting and Testing
 
 There are several linting tools for accessibility, which can help to validate the code written and fix accessibility issues before they happen.
 
-- [deque aXe](https://www.deque.com/axe/) - various browser extensions, a VS Code plugin and npm packages for most frameworks
+- [deque aXe](https://www.deque.com/axe/): various browser extensions, a VS Code plugin and npm packages for most frameworks
+
+We can also run manual tests in the browser
+
+- deque aXe - have browser extensions
+- [WAVE (Web Accessibility Evaluation Tool)](https://wave.webaim.org/): is a manual testing tool either in the browser or via a browser extension
+
+We can also integrate command line tools that automate tests for us, and can be integrated as part of a testing pipeline.
+
+- [pa11y](https://pa11y.org/): a command line tool that can be run manually or added to a CI/CD pipeline, and run with other testing suites.
