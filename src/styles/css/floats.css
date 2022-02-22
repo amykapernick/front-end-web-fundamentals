@@ -1,0 +1,13 @@
+img {
+	float: right;
+	clear: both;
+}
+
+h2, h3 {
+	clear: both;
+}
+
+details {
+	clear: both;
+	overflow: hidden;
+}
