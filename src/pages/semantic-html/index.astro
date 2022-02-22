@@ -167,9 +167,9 @@ const content = {
 			<h2 id="contact">Where can I find out more about Quokkas?</h2>
 			<form>
 				<label for="name_field">Name</label>
-				<input name="name" id="name_field" />
+				<input name="name" id="name_field" required />
 				<label for="email">Email</label>
-				<input type="email" name="email" id="email" />
+				<input type="email" name="email" id="email" required />
 				<label for="date">When do you want to see Quokkas?</label>
 				<input 
 					name="date" 
@@ -178,6 +178,7 @@ const content = {
 					min="2022-02-21"
 					max="2022-02-28"
 					step="3"
+					required
 				/>
 				<label for="dsfdsagbdsiafbd">What time?</label>
 				<input 
@@ -187,9 +188,10 @@ const content = {
 					min="8:00"
 					max="23:30"
 					step="14400"
+					required
 				/>
 				<label for="country">Country</label>
-				<input name="countries" id="country" list="countries-list" />
+				<input name="countries" id="country" list="countries-list" required />
 
 				<datalist id="countries-list">
 					<option value="Afghanistan"/>

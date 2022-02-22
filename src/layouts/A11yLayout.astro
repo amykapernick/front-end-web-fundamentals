@@ -1,0 +1,35 @@
+---
+import Layout from '../components/partials/Layout.astro'
+import '../styles/layouts/a11y.scss'
+import '../styles/css/a11y.css'
+
+const { content = {} } = Astro.props
+const { title = 'Front End Web Fundamentals' } = content
+---
+
+<style lang="scss">
+	@import '../styles/components/partials/layout.scss';
+	@import '../styles/layouts/default.scss';
+
+	.content {
+		padding: 20px;
+
+		:global(img) {
+			max-width: 100%;
+			max-height: 50vh;
+			margin: 20px auto;
+			display: block;
+		}
+	}
+	
+</style>
+
+
+<Layout content={content}>
+	<main>
+		<article class="content">
+			<h1 class="title">{title}</h1>
+			<slot />
+		</article>
+	</main>
+</Layout>

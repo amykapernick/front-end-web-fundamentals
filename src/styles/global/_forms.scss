@@ -49,10 +49,7 @@ input, textarea, select {
 
 	&:invalid {
 		box-shadow: none;
-
-		&:focus {
-			border-color: var.$orange;
-		}
+		border-color: var.$red;
 	}
 
 	&:valid {
