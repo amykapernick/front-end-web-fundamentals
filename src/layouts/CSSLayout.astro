@@ -5,11 +5,17 @@ const { content = {} } = Astro.props;
 const { title = "Front End Web Fundamentals" } = content;
 ---
 
+<style>
+	.content {
+		display: grid;
+	}
+</style>
+
 <Layout content={content}>
-	<div>
+	<main>
 		<div class="content">
 			<h1 class="title">{title}</h1>
 			<slot />
 		</div>
-	</div>
+	</main>
 </Layout>

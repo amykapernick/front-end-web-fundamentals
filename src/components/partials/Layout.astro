@@ -7,27 +7,62 @@ const { content = {} } = Astro.props;
 const { title = "Front End Web Fundamentals", description = "" } = content;
 ---
 
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="x-ua-compatible" content="ie=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width,initial-scale=1,shrink-to-fit=no"
-		/>
-		<title>{title}</title>
-		<meta name="description" content="{{description}}" />
-		<meta name="theme-color" content="#9440a0" />
-	</head>
-	<body>
-		<Header />
-		<slot />
-		<Footer />
-		<style>
-			main {
-				max-height: 100vh;
-				overflow-y: auto;
-			}
-		</style>
-	</body>
-</html>
+<style is:global>
+	img {
+		max-width: 100%;
+	}
+
+	body {
+		display: grid;
+		grid-template-columns: 250px 1fr;
+		grid-template-rows: 1fr auto;
+		grid-template-areas:
+			"header content"
+			"👣 content";
+		max-height: 100vh;
+		height: 100vh;
+	}
+
+	main {
+		grid-area: content;
+		overflow-y: auto;
+		/* grid-column: span 11; */
+		/* grid-column-start: 2;
+		grid-column-end: 13;
+		grid-row-start: 1;
+		grid-row-end: 3; */
+		grid-column: 2 / -1;
+		grid-row: 1 / 3;
+	}
+
+	header {
+		grid-area: header;
+		/* overflow-y: auto; */
+	}
+
+	footer {
+		grid-area: 👣;
+	}
+</style>
+
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta
+	name="viewport"
+	content="width=device-width,initial-scale=1,shrink-to-fit=no"
+/>
+<title>{title}</title>
+<meta name="description" content="{{description}}" />
+<meta name="theme-color" content="#9440a0" />
+
+<body>
+	<Header />
+	<slot />
+	<Footer />
+	<style>
+		main {
+			max-height: 100vh;
+			overflow-y: auto;
+		}
+	</style>
+</body>

@@ -6,7 +6,7 @@ import { Icon } from "astro-icon";
 	@import "../../../src/styles/components/partials/header.scss";
 </style>
 
-<script>
+<script is:inline>
 	const toggleMenu = () => {
 		const sidebar = document.querySelector("#sidebar").dataset;
 
@@ -18,7 +18,7 @@ import { Icon } from "astro-icon";
 	};
 </script>
 
-<div>
+<header>
 	<a class="site-title" href="/">Front End Web Fundamentals</a>
 	<nav id="sidebar" data-open="false">
 		<button class="hamburger" onclick="toggleMenu()">
@@ -141,4 +141,4 @@ import { Icon } from "astro-icon";
 			</li>
 		</ul>
 	</nav>
-</div>
+</header>

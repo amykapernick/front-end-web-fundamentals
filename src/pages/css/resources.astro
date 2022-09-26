@@ -17,22 +17,26 @@ const content = {
 </style>
 
 <Layout content={content}>
-	<ul class="resources"></ul>
-</Layout>{
-	data.map((resource) => (
-		<li class="block">
-			<ResourceTile
-				content={{
-					title: resource.properties.Name.title[0].text.content,
-					img: resource.blocks.results[0],
-					url: resource.properties.URL.url,
-				}}
-			/>
-		</li>
-	))
-}
+	<div>
+		<ul class="resources">
+			{
+				data.map((resource) => (
+					<li class="block">
+						<ResourceTile
+							content={{
+								title: resource.properties.Name.title[0].text
+									.content,
+								img: resource.blocks.results[0],
+								url: resource.properties.URL.url,
+							}}
+						/>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</Layout>
 
-
-<Modal buttonText="Suggest Resource">
-	<ResourceForm section="css" />
+<Modal buttonText="Suggest Resource" Modal />
+<ResourceForm section="css" />
 </Modal>

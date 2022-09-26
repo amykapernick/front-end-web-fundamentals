@@ -7,12 +7,24 @@ const content = {
 ---
 
 <style>
+	img,
+	video {
+		max-width: 600px;
+		max-height: 600px;
+	}
 
+	.sr-only {
+		position: absolute;
+		height: 1px;
+		width: 1px;
+		opacity: 0;
+		pointer-events: none;
+	}
 </style>
 
 <Layout content={content}>
-	<div>
-		<div>
+	<article>
+		<section>
 			<h2 id="what">What are Quokkas</h2>
 			<p>
 				Quokkas are the happiest animal in Australia that surprisngly
@@ -22,7 +34,21 @@ const content = {
 				(although will eat most food you leave lying around) and have no
 				natural predators therefore aren't afraid of humans.
 			</p>
-			<img src="/img/rottnest.jpg" alt="Rottnest Island" />
+			<!-- <img src="/img/rottnest.jpg" alt="Rottnest Island" /> -->
+			<figure>
+				<picture>
+					<source srcset="/img/rottnest.webp" type="image/webp" />
+					<source
+						srcset="/img/rottnest-500_x_375.jpg"
+						media="(min-width: 700px)"
+					/>
+					<source
+						srcset="/img/rottnest-300_x_224.jpg"
+						media="(min-width: 500px)"
+					/>
+					<img src="/img/rottnest.jpg" alt="" />
+				</picture>
+			</figure>
 			<p>
 				But what Quokkas are most known for, is the fact that they look
 				like they're smiling and their penchant for selfies. Quokkas
@@ -32,7 +58,10 @@ const content = {
 				(which is quite often, especially this last few months), they
 				seem like they are smiling.
 			</p>
-			<img src="/img/quokka_2.jpg" alt="" />
+			<figure>
+				<img src="/img/quokka_2.jpg" alt="" />
+				<figcaption>This is a Quokka</figcaption>
+			</figure>
 			<p>
 				Although tourists and visitors to the island love Quokkas, the
 				locals don't appreciate them as much. Due to their lack of fear
@@ -100,8 +129,8 @@ const content = {
 					</tr>
 				</tbody>
 			</table>
-		</div>
-		<div>
+		</section>
+		<section>
 			<h2 id="why">Why am I reading about Quokkas?</h2>
 			<p>
 				Because writing stock content for these things is boring, and
@@ -112,68 +141,70 @@ const content = {
 				and find boring <i>Lorem Ipsum</i> content.
 			</p>
 			<img src="/img/quokka_5.jpg" />
-		</div>
-		<div>
+		</section>
+		<section>
 			<h2 id="faq">Frequently Asked Quokkas</h2>
-			<div>
-				<h3>Are Quokkas real?</h3>
-				<p>
-					Is Australia real? Are we even real? What is real? Are we
-					all just a figment of someone's imagination? Or part of the
-					matrix?
-				</p>
-				<p>
-					Yes, Quokkas are real. They seem too good to be true, and a
-					bit too weird (like most animals in Australia, I'm still
-					convinced that platypus' are a myth), but they do genuinely
-					exist.
-				</p>
-			</div>
-			<div>
-				<h3>Can I have one?</h3>
+			<details>
+				<summary>Are Quokkas real?</summary>
+				<div>
+					<p>
+						Is Australia real? Are we even real? What is real? Are
+						we all just a figment of someone's imagination? Or part
+						of the matrix?
+					</p>
+					<p>
+						Yes, Quokkas are real. They seem too good to be true,
+						and a bit too weird (like most animals in Australia, I'm
+						still convinced that platypus' are a myth), but they do
+						genuinely exist.
+					</p>
+				</div>
+			</details>
+			<details>
+				<summary>Can I have one?</summary>
 				<p>
 					Quokkas are only native to one island in Australia, and
 					don't do well outside of their natural habitat. They're not
 					great as pets, it would be similar to keeping a squirrel as
 					a pet.
 				</p>
-			</div>
-			<div>
-				<h3>What threatens Quokkas?</h3>
+			</details>
+			<details>
+				<summary>What threatens Quokkas?</summary>
 				<p>
 					Although mainland Quokkas are threatened by the European red
 					fox, domesticated cats and dogs as well as wild birds of
 					prey and dingoes, Rottnest Island (where most Quokkas live),
 					is free of most of these predators.
 				</p>
-			</div>
-			<div>
-				<h3>What happens if I try and steal a Quokka?</h3>
+			</details>
+			<details>
+				<summary>What happens if I try and steal a Quokka?</summary>
 				<p>
 					Rottnest Island Authority can issue a $100 fine for picking
 					up a Quokka, and you can be taken to court and subject to a
 					fine of up to $1000.
 				</p>
-			</div>
-			<div>
-				<h3>What does a Quokka do when threatened?</h3>
+			</details>
+			<details>
+				<summary>What does a Quokka do when threatened?</summary>
 				<p>
 					If a Quokka mother is threatened by a predator, she will
 					often throw her baby on the ground to distract the predator
 					and save her own life.
 				</p>
 				<img src="/img/quokka_6.jpg" />
-			</div>
-			<div>
-				<h3>How do I pronounce "Quokka"?</h3>
+			</details>
+			<details>
+				<summary>How do I pronounce "Quokka"?</summary>
 				<p>Quokka is pronounced <em>kwaa-ka</em></p>
 				<p>
 					The name Quokka comes from the Aboriginal people that lived
 					in Western Australia where they were first discovered.
 				</p>
-			</div>
-		</div>
-		<div>
+			</details>
+		</section>
+		<section>
 			<h2>Who knows about Quokkas?</h2>
 			<p>
 				The best place for information about Quokkas is probably the
@@ -184,8 +215,8 @@ const content = {
 				Rottnest Island, WA<br />
 				Australia 6161
 			</address>
-		</div>
-		<div>
+		</section>
+		<section>
 			<h2>This is not a Quokka</h2>
 			<video controls muted loop>
 				<source src="/img/video.mp4" type="video/mp4" />
@@ -197,19 +228,37 @@ const content = {
 				/>
 				<p>Sorry, this is not supported. Update your browser</p>
 			</video>
-		</div>
-		<div>
+		</section>
+		<section>
 			<h2 id="contact">Where can I find out more about Quokkas?</h2>
 			<form>
-				<input name="name" placeholder="Name" required />
-				<input type="email" name="email" placeholder="Email" required />
+				<label for="name_field"> Name</label>
+				<input
+					id="name_field"
+					name="name"
+					placeholder="Name"
+					required
+				/>
+
+				<label
+					class="sr-only"
+					for="dsagbsahjfdbiwbshbvdsdwhr34y21vhy8z457nv783rbvfj"
+					>Email</label
+				>
+				<input
+					id="dsagbsahjfdbiwbshbvdsdwhr34y21vhy8z457nv783rbvfj"
+					type="email"
+					name="email"
+					placeholder="Email"
+					required
+				/>
 				<label>When do you want to see Quokkas?</label>
 				<input
 					name="date"
 					type="date"
-					min="2022-02-21"
-					max="2022-02-28"
-					step="3"
+					min="2022-09-26"
+					max="2022-09-30"
+					value="2022-09-28"
 					required
 				/>
 				<label>What time?</label>
@@ -221,10 +270,272 @@ const content = {
 					step="14400"
 					required
 				/>
-				<input name="countries" placeholder="Country" required />
+				<input
+					name="countries"
+					placeholder="Country"
+					required
+					list="countries_list"
+				/>
+				<datalist id="countries_list">
+					<option value="Afghanistan"></option>
+					<option value="Åland Islands"></option>
+					<option value="Albania"></option>
+					<option value="Algeria"></option>
+					<option value="American Samoa"></option>
+					<option value="Andorra"></option>
+					<option value="Angola"></option>
+					<option value="Anguilla"></option>
+					<option value="Antarctica"></option>
+					<option value="Antigua and Barbuda"></option>
+					<option value="Argentina"></option>
+					<option value="Armenia"></option>
+					<option value="Aruba"></option>
+					<option value="Australia"></option>
+					<option value="Austria"></option>
+					<option value="Azerbaijan"></option>
+					<option value="Bahamas"></option>
+					<option value="Bahrain"></option>
+					<option value="Bangladesh"></option>
+					<option value="Barbados"></option>
+					<option value="Belarus"></option>
+					<option value="Belgium"></option>
+					<option value="Belize"></option>
+					<option value="Benin"></option>
+					<option value="Bermuda"></option>
+					<option value="Bhutan"></option>
+					<option value="Bolivia, Plurinational State of"></option>
+					<option value="Bonaire, Sint Eustatius and Saba"></option>
+					<option value="Bosnia and Herzegovina"></option>
+					<option value="Botswana"></option>
+					<option value="Bouvet Island"></option>
+					<option value="Brazil"></option>
+					<option value="British Indian Ocean Territory"></option>
+					<option value="Brunei Darussalam"></option>
+					<option value="Bulgaria"></option>
+					<option value="Burkina Faso"></option>
+					<option value="Burundi"></option>
+					<option value="Cambodia"></option>
+					<option value="Cameroon"></option>
+					<option value="Canada"></option>
+					<option value="Cape Verde"></option>
+					<option value="Cayman Islands"></option>
+					<option value="Central African Republic"></option>
+					<option value="Chad"></option>
+					<option value="Chile"></option>
+					<option value="China"></option>
+					<option value="Christmas Island"></option>
+					<option value="Cocos (Keeling) Islands"></option>
+					<option value="Colombia"></option>
+					<option value="Comoros"></option>
+					<option value="Congo"></option>
+					<option value="Congo, the Democratic Republic of the"
+					></option>
+					<option value="Cook Islands"></option>
+					<option value="Costa Rica"></option>
+					<option value="Côte d'Ivoire"></option>
+					<option value="Croatia"></option>
+					<option value="Cuba"></option>
+					<option value="Curaçao"></option>
+					<option value="Cyprus"></option>
+					<option value="Czech Republic"></option>
+					<option value="Denmark"></option>
+					<option value="Djibouti"></option>
+					<option value="Dominica"></option>
+					<option value="Dominican Republic"></option>
+					<option value="Ecuador"></option>
+					<option value="Egypt"></option>
+					<option value="El Salvador"></option>
+					<option value="Equatorial Guinea"></option>
+					<option value="Eritrea"></option>
+					<option value="Estonia"></option>
+					<option value="Ethiopia"></option>
+					<option value="Falkland Islands (Malvinas)"></option>
+					<option value="Faroe Islands"></option>
+					<option value="Fiji"></option>
+					<option value="Finland"></option>
+					<option value="France"></option>
+					<option value="French Guiana"></option>
+					<option value="French Polynesia"></option>
+					<option value="French Southern Territories"></option>
+					<option value="Gabon"></option>
+					<option value="Gambia"></option>
+					<option value="Georgia"></option>
+					<option value="Germany"></option>
+					<option value="Ghana"></option>
+					<option value="Gibraltar"></option>
+					<option value="Greece"></option>
+					<option value="Greenland"></option>
+					<option value="Grenada"></option>
+					<option value="Guadeloupe"></option>
+					<option value="Guam"></option>
+					<option value="Guatemala"></option>
+					<option value="Guernsey"></option>
+					<option value="Guinea"></option>
+					<option value="Guinea-Bissau"></option>
+					<option value="Guyana"></option>
+					<option value="Haiti"></option>
+					<option value="Heard Island and McDonald Islands"></option>
+					<option value="Holy See (Vatican City State)"></option>
+					<option value="Honduras"></option>
+					<option value="Hong Kong"></option>
+					<option value="Hungary"></option>
+					<option value="Iceland"></option>
+					<option value="India"></option>
+					<option value="Indonesia"></option>
+					<option value="Iran, Islamic Republic of"></option>
+					<option value="Iraq"></option>
+					<option value="Ireland"></option>
+					<option value="Isle of Man"></option>
+					<option value="Israel"></option>
+					<option value="Italy"></option>
+					<option value="Jamaica"></option>
+					<option value="Japan"></option>
+					<option value="Jersey"></option>
+					<option value="Jordan"></option>
+					<option value="Kazakhstan"></option>
+					<option value="Kenya"></option>
+					<option value="Kiribati"></option>
+					<option value="Korea, Democratic People's Republic of"
+					></option>
+					<option value="Korea, Republic of"></option>
+					<option value="Kuwait"></option>
+					<option value="Kyrgyzstan"></option>
+					<option value="Lao People's Democratic Republic"></option>
+					<option value="Latvia"></option>
+					<option value="Lebanon"></option>
+					<option value="Lesotho"></option>
+					<option value="Liberia"></option>
+					<option value="Libya"></option>
+					<option value="Liechtenstein"></option>
+					<option value="Lithuania"></option>
+					<option value="Luxembourg"></option>
+					<option value="Macao"></option>
+					<option value="Macedonia, the former Yugoslav Republic of"
+					></option>
+					<option value="Madagascar"></option>
+					<option value="Malawi"></option>
+					<option value="Malaysia"></option>
+					<option value="Maldives"></option>
+					<option value="Mali"></option>
+					<option value="Malta"></option>
+					<option value="Marshall Islands"></option>
+					<option value="Martinique"></option>
+					<option value="Mauritania"></option>
+					<option value="Mauritius"></option>
+					<option value="Mayotte"></option>
+					<option value="Mexico"></option>
+					<option value="Micronesia, Federated States of"></option>
+					<option value="Moldova, Republic of"></option>
+					<option value="Monaco"></option>
+					<option value="Mongolia"></option>
+					<option value="Montenegro"></option>
+					<option value="Montserrat"></option>
+					<option value="Morocco"></option>
+					<option value="Mozambique"></option>
+					<option value="Myanmar"></option>
+					<option value="Namibia"></option>
+					<option value="Nauru"></option>
+					<option value="Nepal"></option>
+					<option value="Netherlands"></option>
+					<option value="New Caledonia"></option>
+					<option value="New Zealand"></option>
+					<option value="Nicaragua"></option>
+					<option value="Niger"></option>
+					<option value="Nigeria"></option>
+					<option value="Niue"></option>
+					<option value="Norfolk Island"></option>
+					<option value="Northern Mariana Islands"></option>
+					<option value="Norway"></option>
+					<option value="Oman"></option>
+					<option value="Pakistan"></option>
+					<option value="Palau"></option>
+					<option value="Palestinian Territory, Occupied"></option>
+					<option value="Panama"></option>
+					<option value="Papua New Guinea"></option>
+					<option value="Paraguay"></option>
+					<option value="Peru"></option>
+					<option value="Philippines"></option>
+					<option value="Pitcairn"></option>
+					<option value="Poland"></option>
+					<option value="Portugal"></option>
+					<option value="Puerto Rico"></option>
+					<option value="Qatar"></option>
+					<option value="Réunion"></option>
+					<option value="Romania"></option>
+					<option value="Russian Federation"></option>
+					<option value="Rwanda"></option>
+					<option value="Saint Barthélemy"></option>
+					<option value="Saint Helena, Ascension and Tristan da Cunha"
+					></option>
+					<option value="Saint Kitts and Nevis"></option>
+					<option value="Saint Lucia"></option>
+					<option value="Saint Martin (French part)"></option>
+					<option value="Saint Pierre and Miquelon"></option>
+					<option value="Saint Vincent and the Grenadines"></option>
+					<option value="Samoa"></option>
+					<option value="San Marino"></option>
+					<option value="Sao Tome and Principe"></option>
+					<option value="Saudi Arabia"></option>
+					<option value="Senegal"></option>
+					<option value="Serbia"></option>
+					<option value="Seychelles"></option>
+					<option value="Sierra Leone"></option>
+					<option value="Singapore"></option>
+					<option value="Sint Maarten (Dutch part)"></option>
+					<option value="Slovakia"></option>
+					<option value="Slovenia"></option>
+					<option value="Solomon Islands"></option>
+					<option value="Somalia"></option>
+					<option value="South Africa"></option>
+					<option value="South Georgia and the South Sandwich Islands"
+					></option>
+					<option value="South Sudan"></option>
+					<option value="Spain"></option>
+					<option value="Sri Lanka"></option>
+					<option value="Sudan"></option>
+					<option value="Suriname"></option>
+					<option value="Svalbard and Jan Mayen"></option>
+					<option value="Swaziland"></option>
+					<option value="Sweden"></option>
+					<option value="Switzerland"></option>
+					<option value="Syrian Arab Republic"></option>
+					<option value="Taiwan, Province of China"></option>
+					<option value="Tajikistan"></option>
+					<option value="Tanzania, United Republic of"></option>
+					<option value="Thailand"></option>
+					<option value="Timor-Leste"></option>
+					<option value="Togo"></option>
+					<option value="Tokelau"></option>
+					<option value="Tonga"></option>
+					<option value="Trinidad and Tobago"></option>
+					<option value="Tunisia"></option>
+					<option value="Turkey"></option>
+					<option value="Turkmenistan"></option>
+					<option value="Turks and Caicos Islands"></option>
+					<option value="Tuvalu"></option>
+					<option value="Uganda"></option>
+					<option value="Ukraine"></option>
+					<option value="United Arab Emirates"></option>
+					<option value="United Kingdom"></option>
+					<option value="United States"></option>
+					<option value="United States Minor Outlying Islands"
+					></option>
+					<option value="Uruguay"></option>
+					<option value="Uzbekistan"></option>
+					<option value="Vanuatu"></option>
+					<option value="Venezuela, Bolivarian Republic of"></option>
+					<option value="Viet Nam"></option>
+					<option value="Virgin Islands, British"></option>
+					<option value="Virgin Islands, U.S."></option>
+					<option value="Wallis and Futuna"></option>
+					<option value="Western Sahara"></option>
+					<option value="Yemen"></option>
+					<option value="Zambia"></option>
+					<option value="Zimbabwe"></option>
+				</datalist>
 				<button>Tell me more about Quokkas 🐨</button>
 			</form>
-		</div>
-		<div>© @Amys_Kapers 2022</div>
-	</div>
+		</section>
+		<footer>© @Amys_Kapers 2022</footer>
+	</article>
 </Layout>
