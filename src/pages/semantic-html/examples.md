@@ -3,7 +3,7 @@ title: Semantic HTML Examples
 layout: ../../layouts/DefaultLayout.astro
 ---
 
-## Section Elements
+## Landmark Elements
 
 - [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) - for the header section of a page or article, encompassing items such as the title, search bar or navigation
 - [`footer`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer) - for the footer section of a page or article, encompassing items such as the author information, copyright data or related pages and files

@@ -1,6 +1,6 @@
 {
   "name": "front-end-web-fundamentals",
-  "version": "1.0.0",
+  "version": "4.0.2",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -16,9 +16,17 @@
   "author": "Amy Kapernick <amy@kapers.dev> (https://amyskapers.dev/)",
   "license": "MIT",
   "dependencies": {
-    "astro": "^0.21.13",
-    "astro-icon": "^0.5.3",
-    "pa11y": "^6.1.1",
-    "rehype-external-links": "^1.0.1"
+    "@astrojs/react": "^1.1.4",
+    "astro": "^1.3.0",
+    "astro-icon": "^0.7.3",
+    "eslint-plugin-react": "^7.31.8",
+    "pa11y": "^6.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-external-links": "^2.0.1",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0"
   }
 }

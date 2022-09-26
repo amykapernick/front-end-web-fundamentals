@@ -8,7 +8,7 @@ const sections = [
 		block: 'Day 1',
 		blocks: [
 			{
-				title: 'Semantic HTML',
+				title: 'Semantic HTML and Accessibility',
 				url: '/semantic-html',
 				img: {
 					image: {
@@ -35,7 +35,7 @@ const sections = [
 		block: 'Day 2',
 		blocks: [
 			{
-				title: 'Accessibility',
+				title: 'Accessibility Testing',
 				url: '/a11y',
 			},
 			{

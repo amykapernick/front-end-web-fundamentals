@@ -1,31 +1,41 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from "astro-icon";
 ---
 
 <style lang="scss">
-	@import '../../../src/styles/components/partials/header.scss';
+	@import "../../../src/styles/components/partials/header.scss";
 </style>
 
 <script>
 	const toggleMenu = () => {
-		const sidebar = document.querySelector('#sidebar').dataset
-		
-		if(sidebar.open == "false") {
-			sidebar.open = "true"
+		const sidebar = document.querySelector("#sidebar").dataset;
+
+		if (sidebar.open == "false") {
+			sidebar.open = "true";
 		} else {
-			sidebar.open = "false"
+			sidebar.open = "false";
 		}
-	}
+	};
 </script>
 
-<header>
-	<a class="title" href="/">Front End Web Fundamentals</a>
+<div>
+	<a class="site-title" href="/">Front End Web Fundamentals</a>
 	<nav id="sidebar" data-open="false">
-		<button class="hamburger" onClick="toggleMenu()">
+		<button class="hamburger" onclick="toggleMenu()">
 			<Icon name="hamburger" />
 			<span class="sr-only">Toggle Sidebar</span>
 		</button>
 		<ul class="menu">
+			<li>
+				<ul>
+					<li>
+						<a href="/notes">
+							<Icon name="reference-book" />
+							My Notes
+						</a>
+					</li>
+				</ul>
+			</li>
 			<li>
 				<span>Semantic HTML</span>
 				<ul>
@@ -102,20 +112,20 @@ import { Icon } from 'astro-icon'
 						<a href="/vr">
 							<Icon name="difference" />
 							Visual Regression Testing
-						</a> 
+						</a>
 					</li>
-					<li> 
-						<a href="/vr/resources"> 
+					<li>
+						<a href="/vr/resources">
 							<Icon name="reference-book" />
 							Resources
 						</a>
 					</li>
-				</ul> 
-			</li>  
-			<li>  
+				</ul>
+			</li>
+			<li>
 				<span>UI Testing</span>
-				<ul>  
-					<li> 
+				<ul>
+					<li>
 						<a href="/ui">
 							<Icon name="device" />
 							UI Testing
@@ -131,5 +141,4 @@ import { Icon } from 'astro-icon'
 			</li>
 		</ul>
 	</nav>
-</header>
-
+</div>

@@ -1,17 +1,20 @@
 ---
-import Header from './Header.astro'
-import Footer from './Footer.astro'
-import '../../styles/global/index.scss'
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import "../../styles/global/index.scss";
 
-const { content = {} } = Astro.props
-const { title = 'Front End Web Fundamentals', description = '' } = content
+const { content = {} } = Astro.props;
+const { title = "Front End Web Fundamentals", description = "" } = content;
 ---
 
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+		<meta
+			name="viewport"
+			content="width=device-width,initial-scale=1,shrink-to-fit=no"
+		/>
 		<title>{title}</title>
 		<meta name="description" content="{{description}}" />
 		<meta name="theme-color" content="#9440a0" />
@@ -20,12 +23,11 @@ const { title = 'Front End Web Fundamentals', description = '' } = content
 		<Header />
 		<slot />
 		<Footer />
+		<style>
+			main {
+				max-height: 100vh;
+				overflow-y: auto;
+			}
+		</style>
 	</body>
 </html>
-
-<style>
-	main {
-		max-height: 100vh;
-		overflow-y: auto;
-	}
-</style>

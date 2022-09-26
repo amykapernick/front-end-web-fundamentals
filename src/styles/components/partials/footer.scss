@@ -1,0 +1,19 @@
+@use "../../variables.scss" as var;
+
+footer {
+	background: var.$dark_navy;
+	text-align: center;
+	padding: 20px;
+	font-size: 0.5em;
+	color: var.$red;
+
+	p {
+		margin: 0;
+	}
+}
+
+@media (min-width: var.$mq_sidebar) {
+	footer {
+		text-align: left;
+	}
+}

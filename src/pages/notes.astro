@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/CSSLayout.astro";
+import MyNotes from "../components/parts/notes";
+
+const content = {
+	title: "My Notes",
+};
+---
+
+<style is:global>
+	textarea {
+		width: 100%;
+		max-width: 800px;
+		margin: 20px;
+		display: block;
+		height: 500px;
+	}
+</style>
+
+<Layout content={content}>
+	<MyNotes client:only="react" />
+</Layout>

@@ -1,43 +1,15 @@
 ---
-import Layout from '../components/partials/Layout.astro'
-import '../styles/css/cssGrid.css'
+import Layout from "../components/partials/Layout.astro";
 
-const { content = {} } = Astro.props
-const { title = 'Front End Web Fundamentals' } = content
+const { content = {} } = Astro.props;
+const { title = "Front End Web Fundamentals" } = content;
 ---
 
-<style lang="scss">
-	@use '../styles/variables.scss' as var;
-	@import '../styles/layouts/default.scss';
-
-	.content {
-		padding: 20px;
-
-		:global(img) {
-			max-width: 100%;
-			max-height: 50vh;
-			margin: 20px auto;
-			display: block;
-		}
-	}
-
-	@media(min-width: var.$mq_sidebar) {
-		body {
-			max-height: 100vh;
-		}
-
-		main {
-			max-height: 100vh;
-			overflow-y: auto;
-		}
-	}
-</style>
-
 <Layout content={content}>
-	<main>
-		<article class="content">
+	<div>
+		<div class="content">
 			<h1 class="title">{title}</h1>
 			<slot />
-		</article>
-	</main>
+		</div>
+	</div>
 </Layout>

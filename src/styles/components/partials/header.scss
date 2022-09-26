@@ -6,7 +6,7 @@ header {
 	justify-content: space-between;
 	padding: 20px;
 	background: var.$dark_navy;
-	box-shadow: 0 2px 10px rgba(var.$navy, 0.15);		
+	box-shadow: 0 2px 10px rgba(var.$navy, 0.15);
 }
 
 nav {
@@ -18,10 +18,10 @@ nav {
 		}
 	}
 
-	
+
 }
 
-.title {
+.site-title {
 	display: block;
 	text-decoration: none;
 	margin: 0;
@@ -106,7 +106,7 @@ nav {
 		display: block;
 	}
 
-	.title {
+	.site-title {
 		font-size: 0.7em;
 	}
 

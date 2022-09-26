@@ -1,22 +1,24 @@
-export default ({
+import react from '@astrojs/react';
+import {defineConfig} from 'astro/config'
+
+export default defineConfig({
+	site: 'http://localhost:3000',
 	vite: {
 		ssr: {
 			external: ['svgo']
 		}
 	},
-	markdownOptions: {
+	markdown: {
 		render: [
 			'@astrojs/markdown-remark',
 			{
-				syntaxHighlight: 'prism',
 				rehypePlugins: [
 					'rehype-external-links'
 				]
 			}
 		]
 	},
-	buildOptions: {
-		sitemap: true,
-		site: 'http://localhost:3000'
-	}
+	integrations: [
+		react()
+	]
 });
