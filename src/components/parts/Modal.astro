@@ -1,7 +1,7 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from "astro-icon";
 
-const { buttonText = 'Open Modal', buttonIcon } = Astro.props
+const { buttonText = "Open Modal", buttonIcon } = Astro.props;
 ---
 
 <button onClick="toggleModal()">
@@ -17,7 +17,7 @@ const { buttonText = 'Open Modal', buttonIcon } = Astro.props
 </div>
 
 <style lang="scss">
-	@use '../../styles/_variables.scss' as var;
+	@use "../../styles/_variables.scss" as var;
 
 	.modal {
 		display: none;
@@ -26,7 +26,7 @@ const { buttonText = 'Open Modal', buttonIcon } = Astro.props
 		left: 50%;
 		transform: translateY(-50%) translateX(-50%);
 		padding: 40px;
-		
+
 		color: var.$background;
 		z-index: 100;
 
@@ -42,7 +42,7 @@ const { buttonText = 'Open Modal', buttonIcon } = Astro.props
 			height: 100vh;
 			width: 100vw;
 			z-index: -1;
-			content: '';
+			content: "";
 			background: var.$dark_background;
 			opacity: 0.9;
 		}
@@ -54,7 +54,7 @@ const { buttonText = 'Open Modal', buttonIcon } = Astro.props
 			left: 0;
 			right: 0;
 			z-index: -1;
-			content: '';
+			content: "";
 			background: var.$navy;
 			border-radius: 10px;
 		}
@@ -87,14 +87,14 @@ const { buttonText = 'Open Modal', buttonIcon } = Astro.props
 	}
 </style>
 
-<script>
+<script is:inline>
 	const toggleModal = () => {
-		const modal = document.querySelector('#modal').dataset
-		
-		if(modal.open == "false") {
-			modal.open = "true"
+		const modal = document.querySelector("#modal").dataset;
+
+		if (modal.open == "false") {
+			modal.open = "true";
 		} else {
-			modal.open = "false"
+			modal.open = "false";
 		}
-	}
+	};
 </script>

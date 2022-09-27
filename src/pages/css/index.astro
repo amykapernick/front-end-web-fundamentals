@@ -13,11 +13,15 @@ const content = {
 </style>
 
 <Layout content={content}>
-	<ul></ul>
-</Layout>{
-	sections.map((block) => (
-		<li>
-			<ResourceTile content={block} />
-		</li>
-	))
-}
+	<div>
+		<ul>
+			{
+				sections.map((block) => (
+					<li>
+						<ResourceTile content={block} />
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</Layout>

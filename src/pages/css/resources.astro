@@ -13,7 +13,34 @@ const content = {
 ---
 
 <style>
+	.resources {
+		list-style: none;
 
+		display: flex;
+		flex-wrap: wrap;
+		margin: -10px;
+		justify-content: space-between;
+	}
+
+	.block {
+		flex-grow: 1;
+		margin: 10px;
+	}
+
+	@supports (grid-template-areas: ".") {
+		.resources {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+			/* grid-column-gap: 20px;
+			grid-row-gap: 15px; */
+			grid-gap: 20px;
+			margin: 0;
+		}
+
+		.block {
+			margin: 0;
+		}
+	}
 </style>
 
 <Layout content={content}>
@@ -35,8 +62,7 @@ const content = {
 			}
 		</ul>
 	</div>
+	<Modal buttonText="Suggest Resource">
+		<ResourceForm section="css" />
+	</Modal>
 </Layout>
-
-<Modal buttonText="Suggest Resource" Modal />
-<ResourceForm section="css" />
-</Modal>
