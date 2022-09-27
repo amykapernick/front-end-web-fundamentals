@@ -19,6 +19,7 @@
     "@astrojs/react": "^1.1.4",
     "astro": "^1.3.0",
     "astro-icon": "^0.7.3",
+    "cypress": "^10.8.0",
     "eslint-plugin-react": "^7.31.8",
     "pa11y": "^6.2.3",
     "react": "^18.2.0",
